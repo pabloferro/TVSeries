@@ -1,9 +1,6 @@
 import React from 'react';
-import {TextProps} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import CustomText from '../components/CustomText';
-import {TextVariants} from '../components/CustomText/TextVariants';
 import ShowDetailScreen from '../shows/screens/ShowDetailScreen';
 import {white} from '../constants/colors';
 
@@ -14,7 +11,12 @@ import variantsStyles from '../components/CustomText/variantsStyles';
 
 export type RootStackParamList = {
   HomeTabs: undefined;
-  ShowDetail: Pick<Show, 'id' | 'name'>;
+  ShowDetail: {
+    show: Pick<
+      Show,
+      'id' | 'name' | 'image' | 'schedule' | 'genres' | 'summary'
+    >;
+  };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -35,7 +37,7 @@ export default function RootStackNavigator() {
       <Stack.Screen
         name="ShowDetail"
         options={({route}) => ({
-          title: route.params.name,
+          title: route.params.show.name,
         })}
         component={ShowDetailScreen}
       />

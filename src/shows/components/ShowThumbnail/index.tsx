@@ -19,9 +19,7 @@ export default function ShowThumbnail({show}: Props) {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() =>
-        navigation.navigate('ShowDetail', {id: show.id, name: show.name})
-      }>
+      onPress={() => navigation.navigate('ShowDetail', {show})}>
       <ServerImage
         style={styles.poster}
         source={{

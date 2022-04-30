@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  nextPageLoader: {
-    paddingBottom: 20,
+  poster: {
+    width: 210,
+    height: 295,
   },
 });
