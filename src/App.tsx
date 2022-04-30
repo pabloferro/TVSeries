@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
-import ShowsScreen from './shows/screens/ShowsScreen';
+import ShowsSearchScreen from './shows/screens/ShowsSearchScreen';
 import {StatusBar} from 'react-native';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
       <QueryProvider>
         <SafeAreaProvider>
           <NavigationContainer>
-            <ShowsScreen />
+            <ShowsSearchScreen />
           </NavigationContainer>
         </SafeAreaProvider>
       </QueryProvider>

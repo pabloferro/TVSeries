@@ -1,22 +1,17 @@
 import React from 'react';
 import {ActivityIndicator, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 import useShows from '../../api/useShows';
+import ShowList from '../../components/ShowList';
+import MainLayout from '../../../components/MainLayout';
 
 import styles from './styles';
-import CustomText from '../../../components/CustomText';
-import {TextVariants} from '../../../components/CustomText/TextVariants';
-import ShowList from '../../components/ShowList';
 
 export default function ShowsScreen() {
   const showsQuery = useShows();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <CustomText variant={TextVariants.h1} style={styles.title}>
-        TV Shows
-      </CustomText>
+    <MainLayout title="TV Shows">
       <ShowList
         data={showsQuery.data?.pages.flat()}
         onEndReachedThreshold={0.5}
@@ -31,6 +26,6 @@ export default function ShowsScreen() {
           ) : null
         }
       />
-    </SafeAreaView>
+    </MainLayout>
   );
 }
