@@ -19,6 +19,11 @@ module.exports = {
                 importNames: ['Text'],
                 message: 'Please use CustomText instead.',
               },
+              {
+                name: 'react-native',
+                importNames: ['TextInput'],
+                message: 'Please use CustomTextInput instead.',
+              },
             ],
           },
         ],

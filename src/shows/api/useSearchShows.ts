@@ -1,7 +1,11 @@
 import {useQuery} from 'react-query';
 import {Show} from './Show';
 
-async function searchShows(query: string): Promise<Show[]> {
+async function searchShows(query: string): Promise<Show[] | undefined> {
+  if (!query) {
+    return undefined;
+  }
+
   const response = await fetch(
     `https://api.tvmaze.com/search/shows?q=${query}`,
   );
