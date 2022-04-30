@@ -1,15 +1,18 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
 
 export default function App() {
   return (
     <QueryProvider>
-      <NavigationContainer>
-        <Text>TV Series</Text>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Text>TV Series</Text>
+        </NavigationContainer>
+      </SafeAreaProvider>
     </QueryProvider>
   );
 }
