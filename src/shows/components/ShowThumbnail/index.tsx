@@ -21,7 +21,18 @@ export default function ShowThumbnail({show}: {show: Show}) {
         />
       )}
       <View style={styles.infoContainer}>
-        <CustomText variant={TextVariants.h2}>{show.name}</CustomText>
+        <CustomText
+          variant={TextVariants.h2}
+          ellipsizeMode="tail"
+          numberOfLines={2}>
+          {show.name}
+        </CustomText>
+        <CustomText variant={TextVariants.secondary}>
+          ({new Date(show.premiered).getFullYear()})
+        </CustomText>
+        <CustomText variant={TextVariants.body}>
+          Rating: {show.rating.average}
+        </CustomText>
       </View>
     </View>
   );

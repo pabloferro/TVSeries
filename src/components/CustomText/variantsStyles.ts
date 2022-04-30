@@ -1,4 +1,5 @@
 import {StyleSheet, TextStyle} from 'react-native';
+import {secondary} from '../../constants/colors';
 import {TextVariants} from './TextVariants';
 
 const baseStyle: TextStyle = {
@@ -18,6 +19,17 @@ export default StyleSheet.create<{
   },
   h2: {
     ...baseStyle,
+    fontSize: 18,
+    fontWeight: '500',
+  },
+  body: {
+    ...baseStyle,
+    fontSize: 16,
+    fontWeight: '400',
+  },
+  secondary: {
+    ...baseStyle,
+    color: secondary,
     fontSize: 16,
     fontWeight: '500',
   },

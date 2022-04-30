@@ -9,8 +9,6 @@ export default StyleSheet.create({
     height: '100%',
   },
   placeHolder: {
-    width: '100%',
-    height: '100%',
     backgroundColor: backgroundLight,
   },
 });

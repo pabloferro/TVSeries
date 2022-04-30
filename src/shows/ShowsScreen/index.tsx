@@ -21,7 +21,9 @@ export default function ShowsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <CustomText variant={TextVariants.h1}>Shows</CustomText>
+      <CustomText variant={TextVariants.h1} style={styles.title}>
+        TV Shows
+      </CustomText>
       <FlatList
         data={showsQuery.data?.pages.flat()}
         renderItem={renderItem}

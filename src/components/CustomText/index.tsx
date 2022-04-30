@@ -9,6 +9,6 @@ interface Props extends TextProps {
   variant?: TextVariants;
 }
 
-export default function CustomText({variant, ...props}: Props) {
-  return <Text style={variants[variant || 'default']} {...props} />;
+export default function CustomText({variant, style, ...props}: Props) {
+  return <Text style={[variants[variant || 'default'], style]} {...props} />;
 }

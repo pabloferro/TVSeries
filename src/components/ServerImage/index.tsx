@@ -1,37 +1,38 @@
-import React, {ComponentProps, useState} from 'react';
-import {LayoutAnimation, UIManager, View} from 'react-native';
+import React, {ComponentProps, useRef, useState} from 'react';
+import {Animated, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 import styles from './styles';
-
-UIManager.setLayoutAnimationEnabledExperimental &&
-  UIManager.setLayoutAnimationEnabledExperimental(true);
 
 export default function ServerImage({
   style,
   ...fastImageProps
 }: ComponentProps<typeof FastImage>) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const handleLoaded = () => {
-    setImageLoaded(true);
-    LayoutAnimation.configureNext(
-      LayoutAnimation.create(
-        400,
-        LayoutAnimation.Types.linear,
-        LayoutAnimation.Properties.opacity,
-      ),
-    );
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 400,
+      useNativeDriver: true,
+    }).start(() => setImageLoaded(true));
   };
 
   return (
     <View style={style}>
-      <FastImage
-        {...fastImageProps}
-        onLoadEnd={handleLoaded}
-        style={styles.fill}
-      />
-      {!imageLoaded && <View style={styles.placeHolder} />}
+      {!imageLoaded && <View style={[styles.fill, styles.placeHolder]} />}
+      <Animated.View
+        style={{
+          ...styles.fill,
+          opacity: fadeAnim,
+        }}>
+        <FastImage
+          {...fastImageProps}
+          onLoadEnd={handleLoaded}
+          style={styles.fill}
+        />
+      </Animated.View>
     </View>
   );
 }
