@@ -9,7 +9,7 @@ import {TextVariants} from '../../../components/CustomText/TextVariants';
 
 import styles from './styles';
 import useShowEpisodes from '../../api/useShowEpisodes';
-import {ScrollView} from 'react-native';
+import {ScrollView, SectionList} from 'react-native';
 
 interface Props {
   route: RouteProp<RootStackParamList, 'ShowDetail'>;
@@ -38,15 +38,21 @@ export default function ShowDetailScreen({route}: Props) {
         </CustomText>
         <CustomText variant={TextVariants.body}>{show.genres}</CustomText>
         <CustomText variant={TextVariants.body}>{show.summary}</CustomText>
-        <CustomText variant={TextVariants.body}>
-          {JSON.stringify(
-            episodesQuery.data?.map(
-              e => `S${e.season}E${e.number} - ${e.name}`,
-            ),
-            null,
-            2,
-          )}
-        </CustomText>
+        {episodesQuery.data && (
+          <SectionList
+            sections={episodesQuery.data}
+            keyExtractor={item => item.id.toString()}
+            renderItem={({item}) => (
+              <CustomText
+                variant={
+                  TextVariants.body
+                }>{`Episode ${item.number} - ${item.name}`}</CustomText>
+            )}
+            renderSectionHeader={({section: {season}}) => (
+              <CustomText variant={TextVariants.h2}>Season {season}</CustomText>
+            )}
+          />
+        )}
       </ScrollView>
     </MainLayout>
   );
