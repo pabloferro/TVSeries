@@ -1,10 +1,10 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
-import ShowsSearchScreen from './shows/screens/ShowsSearchScreen';
-import {StatusBar} from 'react-native';
+import RootTabNavigator from './navigation/RootTabNavigator';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <QueryProvider>
         <SafeAreaProvider>
           <NavigationContainer>
-            <ShowsSearchScreen />
+            <RootTabNavigator />
           </NavigationContainer>
         </SafeAreaProvider>
       </QueryProvider>

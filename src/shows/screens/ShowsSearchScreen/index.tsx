@@ -14,7 +14,7 @@ export default function ShowsSearchScreen() {
   const showsQuery = useSearchShows(debouncedSearchQuery);
 
   return (
-    <MainLayout title="Search TV Shows">
+    <MainLayout>
       <CustomTextInput
         placeholder="Search by name"
         value={searchQuery}

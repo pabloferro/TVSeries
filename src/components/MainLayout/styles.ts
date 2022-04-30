@@ -7,7 +7,4 @@ export default StyleSheet.create({
     backgroundColor: background,
     paddingHorizontal: 16,
   },
-  title: {
-    paddingVertical: 20,
-  },
 });

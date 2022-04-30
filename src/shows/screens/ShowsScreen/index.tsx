@@ -12,7 +12,7 @@ export default function ShowsScreen() {
   const showsQuery = useShows();
 
   return (
-    <MainLayout title="TV Shows">
+    <MainLayout>
       <ShowList
         isLoading={showsQuery.isLoading}
         data={showsQuery.data?.pages.flat()}
