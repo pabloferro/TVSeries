@@ -1,9 +1,9 @@
 import {StyleSheet, TextStyle} from 'react-native';
-import {secondary} from '../../constants/colors';
+import {secondary, white} from '../../constants/colors';
 import {TextVariants} from './TextVariants';
 
 const baseStyle: TextStyle = {
-  color: 'white',
+  color: white,
 };
 
 export default StyleSheet.create<{

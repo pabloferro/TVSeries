@@ -2,7 +2,6 @@ import React from 'react';
 
 import ShowList from '../../components/ShowList';
 import useSearchShows from '../../api/useSearchShows';
-
 import MainLayout from '../../../components/MainLayout';
 
 export default function ShowsSearchScreen() {
@@ -10,7 +9,7 @@ export default function ShowsSearchScreen() {
 
   return (
     <MainLayout title="Search TV Show by name">
-      <ShowList data={showsQuery.data} />
+      <ShowList isLoading={showsQuery.isLoading} data={showsQuery.data} />
     </MainLayout>
   );
 }

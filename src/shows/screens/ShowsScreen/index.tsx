@@ -4,6 +4,7 @@ import {ActivityIndicator, View} from 'react-native';
 import useShows from '../../api/useShows';
 import ShowList from '../../components/ShowList';
 import MainLayout from '../../../components/MainLayout';
+import {white} from '../../../constants/colors';
 
 import styles from './styles';
 
@@ -13,6 +14,7 @@ export default function ShowsScreen() {
   return (
     <MainLayout title="TV Shows">
       <ShowList
+        isLoading={showsQuery.isLoading}
         data={showsQuery.data?.pages.flat()}
         onEndReachedThreshold={0.5}
         onEndReached={() => {
@@ -21,7 +23,7 @@ export default function ShowsScreen() {
         ListFooterComponent={
           showsQuery.isFetchingNextPage ? (
             <View style={styles.nextPageLoader}>
-              <ActivityIndicator />
+              <ActivityIndicator color={white} />
             </View>
           ) : null
         }
