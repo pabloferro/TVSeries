@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
-import RootTabNavigator from './navigation/RootTabNavigator';
+import RootStackNavigator from './navigation/RootStackNavigator';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <QueryProvider>
         <SafeAreaProvider>
           <NavigationContainer>
-            <RootTabNavigator />
+            <RootStackNavigator />
           </NavigationContainer>
         </SafeAreaProvider>
       </QueryProvider>

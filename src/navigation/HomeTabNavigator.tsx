@@ -3,17 +3,17 @@ import {TextProps} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import ShowsScreen from '../shows/screens/ShowsScreen';
 import ShowsSearchScreen from '../shows/screens/ShowsSearchScreen';
 import CustomText from '../components/CustomText';
 import {TextVariants} from '../components/CustomText/TextVariants';
 import {brandPrimary, white} from '../constants/colors';
 
 import styles from './styles';
+import ShowsScreen from '../shows/screens/ShowsScreen';
 
 const Tab = createBottomTabNavigator();
 
-export default function RootTabNavigator() {
+export default function HomeTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -27,7 +27,7 @@ export default function RootTabNavigator() {
         ),
       }}>
       <Tab.Screen
-        name="Shows"
+        name="ShowsTab"
         options={{
           title: 'TV Shows',
           tabBarLabel: 'Shows',
@@ -42,7 +42,7 @@ export default function RootTabNavigator() {
         component={ShowsScreen}
       />
       <Tab.Screen
-        name="SearchShows"
+        name="SearchTab"
         options={{
           title: 'Search TV Shows',
           tabBarLabel: 'Search',

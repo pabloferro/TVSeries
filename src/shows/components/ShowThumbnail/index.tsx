@@ -1,16 +1,27 @@
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import CustomText from '../../../components/CustomText';
 import {TextVariants} from '../../../components/CustomText/TextVariants';
 import ServerImage from '../../../components/ServerImage';
+import {RootStackParamList} from '../../../navigation/RootStackNavigator';
 import {Show} from '../../api/Show';
 
 import styles from './styles';
 
-export default function ShowThumbnail({show}: {show: Show}) {
+interface Props {
+  show: Show;
+}
+
+export default function ShowThumbnail({show}: Props) {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate('ShowDetail', {id: show.id, name: show.name})
+      }>
       <ServerImage
         style={styles.poster}
         source={{
@@ -32,6 +43,6 @@ export default function ShowThumbnail({show}: {show: Show}) {
           Rating: {show.rating.average || '-'}
         </CustomText>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

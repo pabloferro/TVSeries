@@ -7,7 +7,7 @@ const baseStyle: TextStyle = {
 };
 
 export default StyleSheet.create<{
-  [key in TextVariants]: TextStyle;
+  [key in TextVariants]: TextStyle & {color?: string | undefined};
 }>({
   default: {
     ...baseStyle,
