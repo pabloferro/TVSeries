@@ -30,7 +30,6 @@ export default function ShowsScreen() {
         keyExtractor={keyExtractor}
         onEndReachedThreshold={0.5}
         onEndReached={() => {
-          console.log('onReachEnd');
           showsQuery.fetchNextPage();
         }}
         ListFooterComponent={
