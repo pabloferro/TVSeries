@@ -10,6 +10,18 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
+        'no-restricted-imports': [
+          'error',
+          {
+            paths: [
+              {
+                name: 'react-native',
+                importNames: ['Text'],
+                message: 'Please use CustomText instead.',
+              },
+            ],
+          },
+        ],
       },
     },
   ],

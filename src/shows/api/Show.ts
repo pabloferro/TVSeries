@@ -45,7 +45,7 @@ export interface Show {
     thetvdb: number;
     imdb: string;
   };
-  image: {
+  image?: {
     medium: string;
     original: string;
   };

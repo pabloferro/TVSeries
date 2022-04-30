@@ -4,15 +4,19 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
 import ShowsScreen from './shows/ShowsScreen';
+import {StatusBar} from 'react-native';
 
 export default function App() {
   return (
-    <QueryProvider>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <ShowsScreen />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </QueryProvider>
+    <>
+      <StatusBar backgroundColor="black" />
+      <QueryProvider>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <ShowsScreen />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </QueryProvider>
+    </>
   );
 }
