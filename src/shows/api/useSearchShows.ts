@@ -17,5 +17,5 @@ async function searchShows(query: string): Promise<Show[] | undefined> {
 }
 
 export default function useSearchShows(query: string) {
-  return useQuery(['shows', query], () => searchShows(query));
+  return useQuery(['shows-search', query], () => searchShows(query));
 }
