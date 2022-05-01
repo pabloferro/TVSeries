@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:build": "cd android && gradlew assembleRelease && cd.. && move-cli android/app/build/outputs/apk/release/app-release.apk distribution/TVSeries.apk",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -16,6 +17,7 @@
     "@react-navigation/native-stack": "^6.6.2",
     "@types/react-native-vector-icons": "^6.4.10",
     "lodash.groupby": "^4.6.0",
+    "move-cli": "^2.0.0",
     "react": "17.0.2",
     "react-native": "0.68.1",
     "react-native-fast-image": "^8.5.11",
