@@ -59,7 +59,7 @@ export default function ShowDetailScreen({route}: Props) {
                 </CustomText>
               ))}
             </ScrollView>
-            {!!show.schedule && (
+            {!!show.schedule && !!show.schedule.time && !!show.schedule.days && (
               <>
                 <CustomText variant={TextVariants.h2} style={styles.title}>
                   Schedule
