@@ -10,6 +10,7 @@ import {TextVariants} from '../../../components/CustomText/TextVariants';
 import useShowEpisodes from '../../api/useShowEpisodes';
 import EpisodeThumbnail from '../../components/EpisodeThumbnail';
 import {Episode} from '../../api/Episode';
+import HtmlText from '../../../components/HtmlText';
 
 import styles from './styles';
 
@@ -65,7 +66,7 @@ export default function ShowDetailScreen({route}: Props) {
             <CustomText variant={TextVariants.h2} style={styles.title}>
               Summary
             </CustomText>
-            <CustomText variant={TextVariants.body}>{show.summary}</CustomText>
+            <HtmlText>{show.summary}</HtmlText>
             <CustomText variant={TextVariants.h2} style={styles.title}>
               Episodes
             </CustomText>

@@ -6,7 +6,7 @@ export default StyleSheet.create({
   },
   poster: {
     width: 300,
-    height: 138,
+    height: 170,
   },
   title: {
     marginVertical: 10,
