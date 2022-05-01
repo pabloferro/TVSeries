@@ -16,9 +16,10 @@ interface Props {
 
 export default function EpisodeThumbnail({episode}: Props) {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  //() => navigation.navigate('EpisodeDetail', {episode})
   return (
-    <TouchableOpacity style={styles.container} onPress={() => null}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('EpisodeDetail', {episode})}>
       <View>
         <ServerImage
           style={styles.poster}
@@ -27,11 +28,7 @@ export default function EpisodeThumbnail({episode}: Props) {
           }}
           resizeMode={FastImage.resizeMode.contain}
         />
-        <CustomText
-          style={styles.episodeNumber}
-          variant={TextVariants.body}
-          ellipsizeMode="tail"
-          numberOfLines={1}>
+        <CustomText style={styles.episodeNumber} variant={TextVariants.body}>
           {`S${('0' + episode.season).slice(-2)}E${('0' + episode.number).slice(
             -2,
           )}`}
