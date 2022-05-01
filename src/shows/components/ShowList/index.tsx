@@ -1,5 +1,11 @@
 import React, {useCallback} from 'react';
-import {ActivityIndicator, Button, FlatList, FlatListProps} from 'react-native';
+import {
+  ActivityIndicator,
+  Button,
+  FlatList,
+  FlatListProps,
+  View,
+} from 'react-native';
 import NoElements from '../../../components/NoElements';
 import {backgroundLight, white} from '../../../constants/colors';
 import {Show} from '../../api/Show';
@@ -37,7 +43,7 @@ export default function ShowList({
 
   if (errorProps?.error) {
     return (
-      <>
+      <View style={styles.contentContainer}>
         <NoElements
           iconName="alert"
           message="Oops! We couldn't get the shows, please try again later."
@@ -47,7 +53,7 @@ export default function ShowList({
           title="retry"
           onPress={errorProps.onRefetch}
         />
-      </>
+      </View>
     );
   }
 
