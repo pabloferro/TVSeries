@@ -4,6 +4,7 @@ import {brandBackground} from '../../../constants/colors';
 export default StyleSheet.create({
   header: {
     flex: 1,
+    paddingVertical: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -21,5 +22,8 @@ export default StyleSheet.create({
     paddingVertical: 2,
     marginHorizontal: 5,
     backgroundColor: brandBackground,
+  },
+  title: {
+    marginVertical: 5,
   },
 });
