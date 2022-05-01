@@ -1,10 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  contentContainer: {
+  searchInput: {
     paddingHorizontal: 16,
-  },
-  loader: {
-    paddingVertical: 40,
   },
 });

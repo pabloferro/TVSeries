@@ -11,7 +11,7 @@ import styles from './styles';
 export default function ShowsScreen() {
   const showsQuery = useShows();
   return (
-    <MainLayout>
+    <MainLayout list>
       <ShowList
         isLoading={showsQuery.isLoading}
         data={showsQuery.data?.pages.flat() || []}

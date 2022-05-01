@@ -7,10 +7,14 @@ import styles from './styles';
 interface Props {
   children: ReactNode;
   style?: StyleProp<ViewStyle>;
+  list?: boolean;
 }
 
-export default function MainLayout({children, style}: Props) {
+export default function MainLayout({children, style, list}: Props) {
   return (
-    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
+    <SafeAreaView
+      style={[styles.container, !list && styles.normalContainer, style]}>
+      {children}
+    </SafeAreaView>
   );
 }

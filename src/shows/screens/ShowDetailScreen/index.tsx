@@ -59,16 +59,24 @@ export default function ShowDetailScreen({route}: Props) {
                 </CustomText>
               ))}
             </ScrollView>
-            <CustomText variant={TextVariants.h2} style={styles.title}>
-              Schedule
-            </CustomText>
-            <CustomText variant={TextVariants.body}>{`Airs at ${
-              show.schedule.time
-            } on ${show.schedule.days.join(',')}`}</CustomText>
-            <CustomText variant={TextVariants.h2} style={styles.title}>
-              Summary
-            </CustomText>
-            <HtmlText>{show.summary}</HtmlText>
+            {!!show.schedule && (
+              <>
+                <CustomText variant={TextVariants.h2} style={styles.title}>
+                  Schedule
+                </CustomText>
+                <CustomText variant={TextVariants.body}>{`Airs at ${
+                  show.schedule.time
+                } on ${show.schedule.days.join(',')}`}</CustomText>
+              </>
+            )}
+            {!!show.summary && (
+              <>
+                <CustomText variant={TextVariants.h2} style={styles.title}>
+                  Summary
+                </CustomText>
+                <HtmlText>{show.summary}</HtmlText>
+              </>
+            )}
             <CustomText variant={TextVariants.h2} style={styles.title}>
               Episodes
             </CustomText>

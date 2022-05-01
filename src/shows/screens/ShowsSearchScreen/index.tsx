@@ -7,17 +7,20 @@ import useDebounce from '../../../hooks/useDebounce';
 import CustomTextInput from '../../../components/CustomTextInput';
 import NoElements from '../../../components/NoElements';
 
+import styles from './styles';
+
 export default function ShowsSearchScreen() {
   const [searchQuery, setSearchQuery] = React.useState('');
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
   const showsQuery = useSearchShows(debouncedSearchQuery);
 
   return (
-    <MainLayout>
+    <MainLayout list>
       <CustomTextInput
         placeholder="Search by name"
         value={searchQuery}
         onChangeText={setSearchQuery}
+        style={styles.searchInput}
         autoFocus
       />
       <ShowList

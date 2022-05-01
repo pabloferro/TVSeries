@@ -53,6 +53,7 @@ export default function ShowList({
 
   return (
     <FlatList
+      style={styles.contentContainer}
       data={data}
       renderItem={renderItem}
       keyExtractor={keyExtractor}

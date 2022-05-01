@@ -3,8 +3,11 @@ import {useWindowDimensions} from 'react-native';
 import RenderHtml from 'react-native-render-html';
 import {white} from '../../constants/colors';
 
-export default function HtmlText({children}: {children: string}) {
+export default function HtmlText({children}: {children: string | undefined}) {
   const {width} = useWindowDimensions();
+  if (!children) {
+    return null;
+  }
   return (
     <RenderHtml
       contentWidth={width}
