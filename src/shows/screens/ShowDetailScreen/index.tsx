@@ -14,6 +14,7 @@ import HtmlText from '../../../components/HtmlText';
 import {white} from '../../../constants/colors';
 
 import styles from './styles';
+import NoElements from '../../../components/NoElements';
 
 interface Props {
   route: RouteProp<RootStackParamList, 'ShowDetail'>;
@@ -73,6 +74,12 @@ export default function ShowDetailScreen({route}: Props) {
             </CustomText>
             {episodesQuery.isLoading && (
               <ActivityIndicator size="large" color={white} />
+            )}
+            {!episodesQuery.isLoading && !episodesQuery.data?.length && (
+              <NoElements
+                message="We couldn't find episodes for this show"
+                iconName="television-off"
+              />
             )}
           </View>
         }
