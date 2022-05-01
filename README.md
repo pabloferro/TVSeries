@@ -11,6 +11,18 @@ TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
 - Detailed info of each show
 - Detailed info of each episode
 
+## Testing
+```
+---------------------------------------|---------|----------|---------|---------
+File                                   | % Stmts | % Branch | % Funcs | % Lines
+---------------------------------------|---------|----------|---------|---------
+All files                              |   15.84 |    11.53 |    10.2 |   17.02
+---------------------------------------|---------|----------|---------|---------
+```
+
+I aimed to test a variety of files, for example:
+- Simple component with a snapshot: [CustomTextInput](src/components/CustomTextInput/index.test.tsx)
+- Simple component with several snapshots using each: [CustomText](src/components/CustomText/index.test.tsx)
 
 ## Running on a device or emulator
 
