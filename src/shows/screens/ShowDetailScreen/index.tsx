@@ -9,7 +9,7 @@ import {TextVariants} from '../../../components/CustomText/TextVariants';
 
 import styles from './styles';
 import useShowEpisodes from '../../api/useShowEpisodes';
-import {ScrollView, SectionList} from 'react-native';
+import {ScrollView, SectionList, View} from 'react-native';
 
 interface Props {
   route: RouteProp<RootStackParamList, 'ShowDetail'>;
@@ -26,34 +26,46 @@ export default function ShowDetailScreen({route}: Props) {
 
   return (
     <MainLayout>
-      <ScrollView>
-        {show.image && (
-          <ServerImage
-            style={styles.poster}
-            source={{uri: show.image.medium}}
-          />
-        )}
-        <CustomText variant={TextVariants.body}>
-          {JSON.stringify(show.schedule, null, 2)}
-        </CustomText>
-        <CustomText variant={TextVariants.body}>{show.genres}</CustomText>
-        <CustomText variant={TextVariants.body}>{show.summary}</CustomText>
-        {episodesQuery.data && (
-          <SectionList
-            sections={episodesQuery.data}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({item}) => (
-              <CustomText
-                variant={
-                  TextVariants.body
-                }>{`Episode ${item.number} - ${item.name}`}</CustomText>
+      <SectionList
+        ListHeaderComponent={
+          <View style={styles.header}>
+            {show.image && (
+              <ServerImage
+                style={styles.poster}
+                source={{uri: show.image.medium}}
+              />
             )}
-            renderSectionHeader={({section: {season}}) => (
-              <CustomText variant={TextVariants.h2}>Season {season}</CustomText>
-            )}
-          />
+            <ScrollView
+              style={styles.genresRow}
+              horizontal
+              showsHorizontalScrollIndicator={false}>
+              {show.genres.map(genre => (
+                <CustomText
+                  key={genre}
+                  style={styles.genre}
+                  variant={TextVariants.body}>
+                  {genre}
+                </CustomText>
+              ))}
+            </ScrollView>
+            <CustomText variant={TextVariants.body}>{`Airs at ${
+              show.schedule.time
+            } on ${show.schedule.days.join(',')}`}</CustomText>
+            <CustomText variant={TextVariants.body}>{show.summary}</CustomText>
+          </View>
+        }
+        sections={episodesQuery.data || []}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({item}) => (
+          <CustomText
+            variant={
+              TextVariants.body
+            }>{`Episode ${item.number} - ${item.name}`}</CustomText>
         )}
-      </ScrollView>
+        renderSectionHeader={({section: {season}}) => (
+          <CustomText variant={TextVariants.h2}>Season {season}</CustomText>
+        )}
+      />
     </MainLayout>
   );
 }
