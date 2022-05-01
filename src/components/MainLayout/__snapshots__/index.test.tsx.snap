@@ -18,6 +18,7 @@ exports[`renders correctly 1`] = `
       },
       Object {
         "paddingHorizontal": 16,
+        "paddingVertical": 16,
       },
       undefined,
     ]

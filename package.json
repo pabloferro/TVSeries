@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.1.6",
+    "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
@@ -25,6 +26,7 @@
     "react-native-render-html": "^6.3.4",
     "react-native-safe-area-context": "^4.2.5",
     "react-native-screens": "^3.13.1",
+    "react-native-smooth-pincode-input": "^1.0.9",
     "react-native-vector-icons": "^9.1.0",
     "react-query": "^3.38.0"
   },
@@ -54,7 +56,10 @@
     "setupFiles": [
       "<rootDir>/jest/setup.js"
     ],
-    "coverageReporters": ["lcov", "text"],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!**/node_modules/**"

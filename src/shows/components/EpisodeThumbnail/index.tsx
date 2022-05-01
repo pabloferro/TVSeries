@@ -45,7 +45,7 @@ export default function EpisodeThumbnail({episode}: Props) {
           {episode.airdate}
         </CustomText>
         <CustomText variant={TextVariants.body}>
-          Rating: {episode.rating.average || '-'}
+          Rating: {episode.rating?.average ?? '-'}
         </CustomText>
       </View>
     </TouchableOpacity>

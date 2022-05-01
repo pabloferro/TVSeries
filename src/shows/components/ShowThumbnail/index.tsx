@@ -19,8 +19,10 @@ export default function ShowThumbnail({show}: Props) {
   return (
     <TouchableOpacity
       style={styles.container}
+      accessibilityRole="button"
       onPress={() => navigation.navigate('ShowDetail', {show})}>
       <ServerImage
+        accessibilityLabel={`Poster of ${show.name}`}
         style={styles.poster}
         source={{
           uri: show.image?.medium,
@@ -38,7 +40,7 @@ export default function ShowThumbnail({show}: Props) {
           ({new Date(show.premiered).getFullYear()})
         </CustomText>
         <CustomText variant={TextVariants.body}>
-          Rating: {show.rating.average || '-'}
+          Rating: {show.rating?.average ?? '-'}
         </CustomText>
       </View>
     </TouchableOpacity>

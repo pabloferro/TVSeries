@@ -15,8 +15,8 @@ export interface Show {
     time: string;
     days: string[];
   };
-  rating: {
-    average: null;
+  rating?: {
+    average?: number;
   };
   weight: number;
   network: {
@@ -29,7 +29,7 @@ export interface Show {
     };
     officialSite: string;
   };
-  webChannel: {
+  webChannel?: {
     id: number;
     name: string;
     country: {
@@ -39,7 +39,7 @@ export interface Show {
     };
     officialSite: string;
   };
-  dvdCountry: string;
+  dvdCountry?: string;
   externals: {
     tvrage: number;
     thetvdb: number;

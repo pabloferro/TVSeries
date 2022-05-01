@@ -17,3 +17,15 @@ jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('react-native-vector-icons/MaterialCommunityIcons', () =>
   jest.fn(props => `MaterialCommunityIcons ${JSON.stringify(props)}`),
 );
+
+export const mockedNavigate = jest.fn();
+
+jest.mock('@react-navigation/native', () => {
+  const actualNav = jest.requireActual('@react-navigation/native');
+  return {
+    ...actualNav,
+    useNavigation: () => ({
+      navigate: mockedNavigate,
+    }),
+  };
+});

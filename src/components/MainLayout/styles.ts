@@ -7,6 +7,7 @@ export default StyleSheet.create({
     backgroundColor: background,
   },
   normalContainer: {
+    paddingVertical: 16,
     paddingHorizontal: 16,
   },
 });

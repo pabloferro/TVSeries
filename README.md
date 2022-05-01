@@ -10,19 +10,22 @@ TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
 - Explore & Search views display a poster and info
 - Detailed info of each show
 - Detailed info of each episode
+## Bonus Features
+- Secure app by PIN
 
 ## Testing
 ```
 ---------------------------------------|---------|----------|---------|---------
 File                                   | % Stmts | % Branch | % Funcs | % Lines
 ---------------------------------------|---------|----------|---------|---------
-All files                              |   15.84 |    11.53 |    10.2 |   17.02
+All files                              |    14.9 |    18.75 |   11.94 |   15.68
 ---------------------------------------|---------|----------|---------|---------
 ```
 
 I aimed to test a variety of files, for example:
 - Simple component with a snapshot: [CustomTextInput](src/components/CustomTextInput/index.test.tsx)
 - Simple component with several snapshots using each: [CustomText](src/components/CustomText/index.test.tsx)
+- Component with interactions using testing-library: [ShowThumbnail](src/shows/components/ShowThumbnail/index.test.tsx)
 
 ## Running on a device or emulator
 

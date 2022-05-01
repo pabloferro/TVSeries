@@ -5,6 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import QueryProvider from './components/QueryProvider';
 import RootStackNavigator from './navigation/RootStackNavigator';
+import AuthContextProvider from './auth/context/AuthContextProvider';
 
 export default function App() {
   return (
@@ -12,9 +13,11 @@ export default function App() {
       <StatusBar backgroundColor="black" />
       <QueryProvider>
         <SafeAreaProvider>
-          <NavigationContainer>
-            <RootStackNavigator />
-          </NavigationContainer>
+          <AuthContextProvider>
+            <NavigationContainer>
+              <RootStackNavigator />
+            </NavigationContainer>
+          </AuthContextProvider>
         </SafeAreaProvider>
       </QueryProvider>
     </>

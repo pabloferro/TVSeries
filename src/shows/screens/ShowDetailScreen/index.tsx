@@ -36,7 +36,7 @@ export default function ShowDetailScreen({route}: Props) {
   const keyExtractor = useCallback(({id}: Episode) => id.toString(), []);
 
   return (
-    <MainLayout>
+    <MainLayout list>
       <SectionList
         ListHeaderComponent={
           <View style={styles.header}>

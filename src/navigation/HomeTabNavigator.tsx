@@ -4,14 +4,21 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import ShowsSearchScreen from '../shows/screens/ShowsSearchScreen';
+import ShowsScreen from '../shows/screens/ShowsScreen';
+import SecurityScreen from '../auth/screens/SecurityScreen';
 import CustomText from '../components/CustomText';
 import {TextVariants} from '../components/CustomText/TextVariants';
 import {brandPrimary, white} from '../constants/colors';
 
 import styles from './styles';
-import ShowsScreen from '../shows/screens/ShowsScreen';
 
-const Tab = createBottomTabNavigator();
+export type HomeTabParamList = {
+  ShowsTab: undefined;
+  SearchTab: undefined;
+  SecurityTab: undefined;
+};
+
+const Tab = createBottomTabNavigator<HomeTabParamList>();
 
 export default function HomeTabNavigator() {
   return (
@@ -55,6 +62,20 @@ export default function HomeTabNavigator() {
           ),
         }}
         component={ShowsSearchScreen}
+      />
+      <Tab.Screen
+        name="SecurityTab"
+        options={{
+          title: 'Security',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+              name="account-lock"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+        component={SecurityScreen}
       />
     </Tab.Navigator>
   );
