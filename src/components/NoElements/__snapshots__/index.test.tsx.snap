@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+      "padding": 40,
+    }
+  }
+>
+  MaterialCommunityIcons {"name":"search","color":"#E8D2AE","size":60}
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFF",
+          "fontSize": 18,
+          "fontWeight": "500",
+        },
+        Object {
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    No elements
+  </Text>
+</View>
+`;
