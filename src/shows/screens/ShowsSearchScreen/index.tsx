@@ -5,8 +5,7 @@ import useSearchShows from '../../api/useSearchShows';
 import MainLayout from '../../../components/MainLayout';
 import useDebounce from '../../../hooks/useDebounce';
 import CustomTextInput from '../../../components/CustomTextInput';
-import CustomText from '../../../components/CustomText';
-import {TextVariants} from '../../../components/CustomText/TextVariants';
+import NoElements from '../../../components/NoElements';
 
 export default function ShowsSearchScreen() {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -25,7 +24,10 @@ export default function ShowsSearchScreen() {
         isLoading={showsQuery.isLoading}
         data={showsQuery.data}
         ListEmptyComponent={
-          <CustomText variant={TextVariants.h2}>No results</CustomText>
+          <NoElements
+            message="There were no shows matching your search"
+            iconName="magnify-close"
+          />
         }
       />
     </MainLayout>

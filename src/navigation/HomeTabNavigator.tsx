@@ -47,7 +47,11 @@ export default function HomeTabNavigator() {
           title: 'Search TV Shows',
           tabBarLabel: 'Search',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="magnify" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="movie-search-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
         component={ShowsSearchScreen}
