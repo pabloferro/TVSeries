@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#111",
+        "flex": 1,
+      },
+      Object {
+        "paddingHorizontal": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  Children
+</RNCSafeAreaView>
+`;
+
+exports[`renders correctly for lists 1`] = `
+<RNCSafeAreaView
+  edges={
+    Array [
+      "bottom",
+      "left",
+      "right",
+      "top",
+    ]
+  }
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#111",
+        "flex": 1,
+      },
+      false,
+      undefined,
+    ]
+  }
+>
+  Children
+</RNCSafeAreaView>
+`;

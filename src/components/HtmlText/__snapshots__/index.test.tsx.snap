@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with children 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      undefined,
+      undefined,
+    ]
+  }
+  testID="html"
+>
+  <View
+    style={
+      Array [
+        Object {},
+        undefined,
+        undefined,
+      ]
+    }
+    testID="body"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginBottom": 14,
+            "marginTop": 14,
+          },
+          undefined,
+          undefined,
+        ]
+      }
+      testID="p"
+    >
+      <Text
+        allowFontScaling={true}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#FFF",
+              "fontSize": 16,
+              "fontWeight": "400",
+            },
+            undefined,
+            undefined,
+          ]
+        }
+      >
+        some text
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders nothing when children is undefined 1`] = `null`;
