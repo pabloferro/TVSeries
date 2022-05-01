@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<TextInput
+  placeholderTextColor="#FFF"
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 18,
+      },
+      undefined,
+    ]
+  }
+/>
+`;
