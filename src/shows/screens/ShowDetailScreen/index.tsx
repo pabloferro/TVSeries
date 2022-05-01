@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {RouteProp} from '@react-navigation/native';
-import {ScrollView, SectionList, View} from 'react-native';
+import {ActivityIndicator, ScrollView, SectionList, View} from 'react-native';
 
 import MainLayout from '../../../components/MainLayout';
 import {RootStackParamList} from '../../../navigation/RootStackNavigator';
@@ -11,6 +11,7 @@ import useShowEpisodes from '../../api/useShowEpisodes';
 import EpisodeThumbnail from '../../components/EpisodeThumbnail';
 import {Episode} from '../../api/Episode';
 import HtmlText from '../../../components/HtmlText';
+import {white} from '../../../constants/colors';
 
 import styles from './styles';
 
@@ -70,6 +71,9 @@ export default function ShowDetailScreen({route}: Props) {
             <CustomText variant={TextVariants.h2} style={styles.title}>
               Episodes
             </CustomText>
+            {episodesQuery.isLoading && (
+              <ActivityIndicator size="large" color={white} />
+            )}
           </View>
         }
         sections={episodesQuery.data || []}
