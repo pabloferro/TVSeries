@@ -23,11 +23,17 @@ export default function ShowsSearchScreen() {
       <ShowList
         isLoading={showsQuery.isLoading}
         data={showsQuery.data}
+        errorProps={{
+          error: !!showsQuery.error,
+          onRefetch: showsQuery.refetch,
+        }}
         ListEmptyComponent={
-          <NoElements
-            message="There were no shows matching your search"
-            iconName="magnify-close"
-          />
+          !showsQuery.isLoading && debouncedSearchQuery ? (
+            <NoElements
+              message="There were no shows matching your search"
+              iconName="magnify-close"
+            />
+          ) : null
         }
       />
     </MainLayout>

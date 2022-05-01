@@ -10,12 +10,15 @@ import styles from './styles';
 
 export default function ShowsScreen() {
   const showsQuery = useShows();
-
   return (
     <MainLayout>
       <ShowList
         isLoading={showsQuery.isLoading}
-        data={showsQuery.data?.pages.flat()}
+        data={showsQuery.data?.pages.flat() || []}
+        errorProps={{
+          error: !!showsQuery.error,
+          onRefetch: showsQuery.refetch,
+        }}
         onEndReachedThreshold={0.5}
         onEndReached={() => {
           showsQuery.fetchNextPage();

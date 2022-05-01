@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
-import {ActivityIndicator, FlatList, FlatListProps} from 'react-native';
-import {white} from '../../../constants/colors';
+import {ActivityIndicator, Button, FlatList, FlatListProps} from 'react-native';
+import NoElements from '../../../components/NoElements';
+import {backgroundLight, white} from '../../../constants/colors';
 import {Show} from '../../api/Show';
 
 import ShowThumbnail from '../ShowThumbnail';
@@ -10,9 +11,18 @@ import styles from './styles';
 interface Props extends Omit<FlatListProps<Show>, 'data' | 'renderItem'> {
   data: Show[] | undefined;
   isLoading: boolean;
+  errorProps?: {
+    error: boolean;
+    onRefetch: () => void;
+  };
 }
 
-export default function ShowList({data, isLoading, ...props}: Props) {
+export default function ShowList({
+  data,
+  isLoading,
+  errorProps,
+  ...props
+}: Props) {
   const renderItem = useCallback(
     ({item}: {item: Show}) => <ShowThumbnail show={item} />,
     [],
@@ -25,8 +35,20 @@ export default function ShowList({data, isLoading, ...props}: Props) {
     );
   }
 
-  if (!data) {
-    return null;
+  if (errorProps?.error) {
+    return (
+      <>
+        <NoElements
+          iconName="alert"
+          message="Oops! We couldn't get the shows, please try again later."
+        />
+        <Button
+          color={backgroundLight}
+          title="retry"
+          onPress={errorProps.onRefetch}
+        />
+      </>
+    );
   }
 
   return (
