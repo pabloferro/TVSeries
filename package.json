@@ -8,6 +8,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test:coverage": "jest --collect-coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -53,6 +54,7 @@
     "setupFiles": [
       "<rootDir>/jest/setup.js"
     ],
+    "coverageReporters": ["lcov", "text"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
