@@ -55,6 +55,10 @@
       "<rootDir>/jest/setup.js"
     ],
     "coverageReporters": ["lcov", "text"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
