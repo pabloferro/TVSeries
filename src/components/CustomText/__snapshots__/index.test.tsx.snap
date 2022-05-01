@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variant body renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 16,
+        "fontWeight": "400",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;
+
+exports[`variant default renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;
+
+exports[`variant h1 renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 24,
+        "fontWeight": "700",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;
+
+exports[`variant h2 renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+        "fontSize": 18,
+        "fontWeight": "500",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;
+
+exports[`variant secondary renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#999",
+        "fontSize": 16,
+        "fontWeight": "500",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;
+
+exports[`without variant renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#FFF",
+      },
+      undefined,
+    ]
+  }
+>
+  Text
+</Text>
+`;

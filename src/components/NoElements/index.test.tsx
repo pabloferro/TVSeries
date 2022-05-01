@@ -1,6 +1,7 @@
 import React from 'react';
-import NoElements from '.';
 import {render} from '@testing-library/react-native';
+
+import NoElements from '.';
 
 test('renders correctly', () => {
   const {toJSON} = render(
