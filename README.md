@@ -7,6 +7,7 @@ TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
 ## Features
 - Explore all TV Shows
 - Search TV Shows by name
+- Explore & Search views display a poster and info
 - Detailed info of each show
 - Detailed info of each episode
 
