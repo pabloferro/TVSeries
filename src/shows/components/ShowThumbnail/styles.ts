@@ -11,6 +11,10 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     justifyContent: 'center',
   },
+  nameContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   poster: {
     width: 71,
     height: 100,

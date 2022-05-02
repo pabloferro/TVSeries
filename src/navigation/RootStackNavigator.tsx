@@ -16,6 +16,7 @@ import AuthLoading from '../auth/screens/AuthLoading';
 
 import HomeTabNavigator, {HomeTabParamList} from './HomeTabNavigator';
 import styles from './styles';
+import FavoriteButton from '../favorites/components/FavoriteButton';
 
 export type RootStackParamList = {
   EnterPIN: undefined;
@@ -69,6 +70,13 @@ export default function RootStackNavigator() {
             name="ShowDetail"
             options={({route}) => ({
               title: route.params.show.name,
+              headerRight: () => (
+                <FavoriteButton
+                  type="show"
+                  id={route.params.show.id}
+                  style={styles.favoriteButton}
+                />
+              ),
             })}
             component={ShowDetailScreen}
           />

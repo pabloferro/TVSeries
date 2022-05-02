@@ -12,4 +12,7 @@ export default StyleSheet.create({
     fontSize: 15,
     fontWeight: '400',
   },
+  favoriteButton: {
+    marginRight: 20,
+  },
 });

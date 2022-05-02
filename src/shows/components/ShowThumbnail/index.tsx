@@ -5,6 +5,7 @@ import FastImage from 'react-native-fast-image';
 import CustomText from '../../../components/CustomText';
 import {TextVariants} from '../../../components/CustomText/TextVariants';
 import ServerImage from '../../../components/ServerImage';
+import FavoriteIndicator from '../../../favorites/components/FavoriteIndicator';
 import {RootStackParamList} from '../../../navigation/RootStackNavigator';
 import {Show} from '../../api/Show';
 
@@ -30,12 +31,15 @@ export default function ShowThumbnail({show}: Props) {
         resizeMode={FastImage.resizeMode.contain}
       />
       <View style={styles.infoContainer}>
-        <CustomText
-          variant={TextVariants.h2}
-          ellipsizeMode="tail"
-          numberOfLines={1}>
-          {show.name}
-        </CustomText>
+        <View style={styles.nameContainer}>
+          <CustomText
+            variant={TextVariants.h2}
+            ellipsizeMode="tail"
+            numberOfLines={1}>
+            {show.name}
+          </CustomText>
+          <FavoriteIndicator type="show" id={show.id} />
+        </View>
         <CustomText variant={TextVariants.secondary}>
           ({new Date(show.premiered).getFullYear()})
         </CustomText>
