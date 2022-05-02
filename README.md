@@ -12,6 +12,7 @@ TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
 - Detailed info of each episode
 ## Bonus Features
 - Secure app by PIN
+- Biometric SignIn
 
 ## Testing
 ```

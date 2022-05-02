@@ -51,12 +51,17 @@ export default function AuthContextProvider({
     }
   };
 
+  const handleBiometricSignIn = () => {
+    setAuthenticated(true);
+  };
+
   return (
     <AuthContext.Provider
       value={{
         loading,
         authenticated,
         handleSignIn,
+        handleBiometricSignIn,
         updatePin,
         deletePin,
       }}>

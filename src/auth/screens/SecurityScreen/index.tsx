@@ -6,9 +6,9 @@ import {NavigationProp, useNavigation} from '@react-navigation/native';
 import MainLayout from '../../../components/MainLayout';
 import {RootStackParamList} from '../../../navigation/RootStackNavigator';
 import {backgroundLight} from '../../../constants/colors';
+import useAuth from '../../context/useAuth';
 
 import styles from './styles';
-import useAuth from '../../context/useAuth';
 
 export default function SecurityScreen() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
