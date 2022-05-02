@@ -2,7 +2,10 @@ import {atom, selectorFamily} from 'recoil';
 
 // This state could be use to mark other things as favorite
 export type FavoriteTypes = 'show';
-export type FavoriteList = Record<FavoriteTypes, Record<number, boolean>>;
+export type FavoriteList = Record<
+  FavoriteTypes,
+  Record<number, {isFavorite: boolean; name: string}>
+>;
 
 export const favoritesListKey = '@favorites';
 export const favoritesListState = atom<FavoriteList | null>({
@@ -18,6 +21,6 @@ export const isFavoriteSelector = selectorFamily<
   get:
     ({type, id}) =>
     ({get}) => {
-      return !!get(favoritesListState)?.[type][id];
+      return !!get(favoritesListState)?.[type][id]?.isFavorite;
     },
 });

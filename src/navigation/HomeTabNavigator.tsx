@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import ShowsSearchScreen from '../shows/screens/ShowsSearchScreen';
 import ShowsScreen from '../shows/screens/ShowsScreen';
+import FavShowsScreen from '../shows/screens/FavShowsScreen';
 import SecurityScreen from '../auth/screens/SecurityScreen';
 import CustomText from '../components/CustomText';
 import {TextVariants} from '../components/CustomText/TextVariants';
@@ -15,6 +16,7 @@ import styles from './styles';
 export type HomeTabParamList = {
   ShowsTab: undefined;
   SearchTab: undefined;
+  FavShowsTab: undefined;
   SecurityTab: undefined;
 };
 
@@ -64,12 +66,23 @@ export default function HomeTabNavigator() {
         component={ShowsSearchScreen}
       />
       <Tab.Screen
+        name="FavShowsTab"
+        options={{
+          title: 'Favorites',
+          tabBarLabel: 'Favorites',
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="heart" color={color} size={size} />
+          ),
+        }}
+        component={FavShowsScreen}
+      />
+      <Tab.Screen
         name="SecurityTab"
         options={{
-          title: 'Security',
+          title: 'Settings',
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons
-              name="account-lock"
+              name="account-cog"
               color={color}
               size={size}
             />

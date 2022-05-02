@@ -75,6 +75,7 @@ export default function RootStackNavigator() {
                 <FavoriteButton
                   type="show"
                   id={route.params.show.id}
+                  name={route.params.show.name}
                   style={styles.favoriteButton}
                 />
               ),

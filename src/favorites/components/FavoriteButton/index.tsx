@@ -9,12 +9,13 @@ import {FavoriteTypes} from '../../state';
 interface Props {
   type: FavoriteTypes;
   id: number;
+  name: string;
   style?: StyleProp<ViewStyle>;
 }
 
-export default function FavoriteButton({type, id, style}: Props) {
+export default function FavoriteButton({type, id, name, style}: Props) {
   const isFavorite = useIsFavorite(type, id);
-  const setFavorite = useSetFavorite(type, id);
+  const setFavorite = useSetFavorite(type, id, name);
 
   return (
     <TouchableOpacity
