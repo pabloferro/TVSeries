@@ -4,7 +4,6 @@ import {NavigatorScreenParams} from '@react-navigation/native';
 
 import ShowDetailScreen from '../shows/screens/ShowDetailScreen';
 import {white} from '../constants/colors';
-
 import {Show} from '../shows/api/Show';
 import {Episode} from '../shows/api/Episode';
 import variantsStyles from '../components/CustomText/variantsStyles';
@@ -13,10 +12,11 @@ import useAuth from '../auth/context/useAuth';
 import EnterPinScreen from '../auth/screens/EnterPinScreen';
 import CreatePinScreen from '../auth/screens/CreatePinScreen';
 import AuthLoading from '../auth/screens/AuthLoading';
+import FavoriteButton from '../favorites/components/FavoriteButton';
+import useLoadFavorites from '../favorites/hooks/useLoadFavorites';
 
 import HomeTabNavigator, {HomeTabParamList} from './HomeTabNavigator';
 import styles from './styles';
-import FavoriteButton from '../favorites/components/FavoriteButton';
 
 export type RootStackParamList = {
   EnterPIN: undefined;
@@ -47,6 +47,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function RootStackNavigator() {
   const {loading, authenticated} = useAuth();
+  useLoadFavorites();
 
   if (loading) {
     return <AuthLoading />;

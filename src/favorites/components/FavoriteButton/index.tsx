@@ -3,8 +3,8 @@ import {StyleProp, TouchableOpacity, ViewStyle} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {brandPrimary} from '../../../constants/colors';
-import {FavoriteTypes} from '../../context/FavoriteContext';
-import useFavorite from '../../context/useFavorite';
+import {useIsFavorite, useSetFavorite} from '../../hooks/useFavorite';
+import {FavoriteTypes} from '../../state';
 
 interface Props {
   type: FavoriteTypes;
@@ -13,9 +13,14 @@ interface Props {
 }
 
 export default function FavoriteButton({type, id, style}: Props) {
-  const {isFavorite, setFavorite} = useFavorite(type, id);
+  const isFavorite = useIsFavorite(type, id);
+  const setFavorite = useSetFavorite(type, id);
+
   return (
-    <TouchableOpacity onPress={() => setFavorite(!isFavorite)}>
+    <TouchableOpacity
+      onPress={() => {
+        setFavorite(!isFavorite);
+      }}>
       <MaterialCommunityIcons
         style={style}
         name={isFavorite ? 'heart' : 'heart-outline'}

@@ -100,22 +100,35 @@ exports[`renders correctly with rating 1`] = `
       }
     }
   >
-    <Text
-      ellipsizeMode="tail"
-      numberOfLines={1}
+    <View
       style={
-        Array [
-          Object {
-            "color": "#FFF",
-            "fontSize": 18,
-            "fontWeight": "500",
-          },
-          undefined,
-        ]
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
       }
     >
-      Under the Dome
-    </Text>
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "#FFF",
+              "fontSize": 18,
+              "fontWeight": "500",
+            },
+            undefined,
+          ]
+        }
+      >
+        Under the Dome
+      </Text>
+      <MockedFavoriteIndicator
+        id={1}
+        type="show"
+      />
+    </View>
     <Text
       style={
         Array [
@@ -251,22 +264,35 @@ exports[`renders correctly without rating 1`] = `
       }
     }
   >
-    <Text
-      ellipsizeMode="tail"
-      numberOfLines={1}
+    <View
       style={
-        Array [
-          Object {
-            "color": "#FFF",
-            "fontSize": 18,
-            "fontWeight": "500",
-          },
-          undefined,
-        ]
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
       }
     >
-      Under the Dome
-    </Text>
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "#FFF",
+              "fontSize": 18,
+              "fontWeight": "500",
+            },
+            undefined,
+          ]
+        }
+      >
+        Under the Dome
+      </Text>
+      <MockedFavoriteIndicator
+        id={1}
+        type="show"
+      />
+    </View>
     <Text
       style={
         Array [

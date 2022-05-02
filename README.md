@@ -13,6 +13,8 @@ TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
 ## Bonus Features
 - Secure app by PIN
 - Biometric SignIn
+- Allow the user to save a series as a favorite. (From the show detail header)
+- Allow the user to delete a series from the favorites list. (From the show detail header)
 
 ## Testing
 ```

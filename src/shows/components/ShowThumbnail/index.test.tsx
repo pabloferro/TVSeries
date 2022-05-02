@@ -6,6 +6,11 @@ import {EXAMPLE_SHOW} from './__test__/exampleShow';
 
 import ShowThumbnail from '.';
 
+jest.mock(
+  '../../../favorites/components/FavoriteIndicator',
+  () => 'MockedFavoriteIndicator',
+);
+
 test('renders correctly with rating', () => {
   const {toJSON} = render(<ShowThumbnail show={EXAMPLE_SHOW} />);
   expect(toJSON()).toMatchSnapshot();

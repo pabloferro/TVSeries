@@ -3,8 +3,8 @@ import {StyleProp, ViewStyle} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {brandPrimary} from '../../../constants/colors';
-import {FavoriteTypes} from '../../context/FavoriteContext';
-import useFavorite from '../../context/useFavorite';
+import {useIsFavorite} from '../../hooks/useFavorite';
+import {FavoriteTypes} from '../../state';
 
 interface Props {
   type: FavoriteTypes;
@@ -13,7 +13,8 @@ interface Props {
 }
 
 export default function FavoriteIndicator({type, id, style}: Props) {
-  const {isFavorite} = useFavorite(type, id);
+  const isFavorite = useIsFavorite(type, id);
+
   if (!isFavorite) {
     return null;
   }
