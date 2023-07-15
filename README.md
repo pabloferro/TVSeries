@@ -1,5 +1,8 @@
 # TVSeries
-TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api)
+
+![rn-tvseries](https://github.com/pabloferro/TVSeries/assets/4098152/ea95a858-c543-4779-be18-9788840ce19d)
+
+TV Shows explorer integrated with [TVmaze API](https://www.tvmaze.com/api) built with React Native.
 
 ## APK
 [TVSeries.apk](distribution/TVSeries.apk)
